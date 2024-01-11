@@ -1,3 +1,4 @@
+// individual tour card component
 const PlacesCard = ({ img, title, location, description, price, type}) => {
   return (
     <div className="shadow-lg">
