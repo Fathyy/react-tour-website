@@ -21,6 +21,9 @@ export default {
           "2xl": "6rem",
         },
       },
+      backgroundImage:{
+        'travel': "url('/src/assets/coverWomen.jpg')"
+      }
     },
   },
   plugins: [],

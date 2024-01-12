@@ -1,3 +1,4 @@
+import { IoLocationSharp } from "react-icons/io5";
 // individual tour card component
 const PlacesCard = ({ img, title, location, description, price, type}) => {
   return (
@@ -8,7 +9,12 @@ const PlacesCard = ({ img, title, location, description, price, type}) => {
         hover:skew-x-2 hover:scale-110" />
         <div className="space-y-2 p-3">
           <h1 className="line-clamp-1 font-bold text-xl">{title}</h1>
-          <div className="flex items-center gap-2 opacity-70"></div>
+          <div className="flex items-center gap-2 opacity-70">
+            <IoLocationSharp/>
+            <span>{location}</span>
+            <p className="line-clamp-2">{description}</p>
+
+          </div>
           <div className="flex items-center justify-between
           border-t-2 y-3 mt-3">
             <div className="opacity-70">
