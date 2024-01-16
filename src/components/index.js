@@ -6,6 +6,8 @@ import Places from './Places/Places'
 import PlacesCard from './Places/PlacesCard'
 import BannerImg from "./BannerImg/BannerImg";
 import BlogsComp from "./Blogs/BlogsComp";
+import Banner from "./banner/Banner";
+
 
 
 export {
@@ -16,5 +18,6 @@ export {
     Places,
     PlacesCard,
     BannerImg,
-    BlogsComp
+    BlogsComp,
+    Banner
 }
