@@ -1,6 +1,10 @@
+import { Places } from "../components"
+
 const PlacesRoute = () => {
   return (
-    <div>PlacesRoute</div>
+    <div className="pt-14">
+      <Places/>
+    </div>
   )
 }
 

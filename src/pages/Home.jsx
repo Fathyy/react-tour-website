@@ -1,5 +1,5 @@
 import { main } from "../assets"
-import { Banner, BannerImg, Hero, Places } from "../components";
+import { Banner, BannerImg, Hero, Places, Testimonials } from "../components";
 import Blogs from "./Blogs";
 
 const Home = () => {
@@ -18,6 +18,8 @@ const Home = () => {
       <Blogs/>
       <Banner/>
       <BannerImg/>
+      <Testimonials/>
+  
     </div>
     </>
   )
