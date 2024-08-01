@@ -8,7 +8,8 @@ import BannerImg from "./BannerImg/BannerImg";
 import BlogsComp from "./Blogs/BlogsComp";
 import Banner from "./banner/Banner";
 import Testimonials from "./testimonials/Testimonials";
-import { Location } from "Location/Location.jsx";
+import Location  from "./Location/Location.jsx";
+import BlogCard from "./Blogs/BlogCard.jsx";
 
 
 
@@ -23,5 +24,6 @@ export {
     BlogsComp,
     Banner,
     Testimonials,
-    Location
+    Location,
+    BlogCard
 }

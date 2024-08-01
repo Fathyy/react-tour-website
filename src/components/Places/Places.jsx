@@ -58,10 +58,10 @@ const PlacesData = [
 ];
 
 
-const Places = () => {
+const Places = ({ handleOrderPopup }) => {
   return (
-    <div className="bg-gray-50 py-10">
-      <div className="container">
+    <div className="dark:bg-gray-900 dark:text-white bg-gray-50 py-10">
+      <div data-aos="fade-up" className="container">
         <h1 className="my-8 border-l-8 border-primary/50
         py-2 pl-2 text-3xl font-bold">
           Best Places to Visit
@@ -69,7 +69,10 @@ const Places = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2
         md:grid-cols-3 gap-4">
           {PlacesData.map((item, index) => {
-            <PlacesCard key={index} { ...item }/>
+            return(
+            <PlacesCard handleOrderPopup={handleOrderPopup}            
+            key={index} { ...item }/>
+            )
           })}
         </div>
       </div>

@@ -6,11 +6,13 @@ author}) => {
     <Link to={`/blogs/${title}`} onClick={() => {
         window.scrollTo(0, 0);
     }} 
+    // passing extra information to the desination of the link in the form of 
+    // props
     state={{ image, date, title, description,
     author}}>
         
     <div className="p-4 shadow-lg transition-all duration-500
-    hover:shadow-xl">
+    hover:shadow-xl dark:bg-slate-950 dark:text-white">
         <div className="overflow-hidden">
             <img src={image} alt="" className="mx-auto
             h-[250px] w-full object-cover transition-all
@@ -20,10 +22,10 @@ author}) => {
         <div className="flex justify-between pt-2
         text-slate-600">
             <p>{date}</p>
-            <p>{author}</p>
+            <p className="line-clamp-1">By {author}</p>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 py-3">
             <h1 className="line-clamp-1 font-bold">{title}</h1>
             <p className="line-clamp-2">{description}</p>
         </div>

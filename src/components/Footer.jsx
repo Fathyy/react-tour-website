@@ -29,9 +29,9 @@ const FooterLinks = [
 
 const Footer = () => {
   return (
-    <div className="py-10 relative overflow-hidden">
-      <video autoPlay loop muted className="absolute
-      right-0 top-0 h-full overflow-hidden w-full object-cover
+    <div className="dark:bg-gray-950 py-10 relative overflow-hidden">
+      <video autoPlay loop muted 
+      className="absolute right-0 top-0 h-full overflow-hidden w-full object-cover
       z-[-1]">
         <source src={footer} type="video/mp4" />
       </video>
@@ -39,7 +39,7 @@ const Footer = () => {
       <div className="container">
         <div className="grid md:grid-cols-3
         py-5 bg-white/80 backdrop-blur-sm rounded-t-xl">
-          <div>
+          <div className="py-8 px-4">
             <h1 className="flex items-center gap-3 text-xl sm:text-3xl
             font-bold text-justify sm:text-left">
               <img src={logo} alt="" className="max-h-[60px]"/>

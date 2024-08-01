@@ -1,8 +1,15 @@
-import { main } from "../assets"
-import { Banner, BannerImg, Hero, Places, Testimonials } from "../components";
-import Blogs from "./Blogs";
+import { useState } from "react";
+import { coverWomen, main, travelCover } from "../assets"
+import { Banner, BannerImg, BlogsComp, Hero, Places, Testimonials } from "../components";
+import Popup from "../components/Popup/Popup";
 
 const Home = () => {
+  const [orderPopup, setOrderPopup] = useState(false);
+
+  const handleOrderPopup = () =>{
+    setOrderPopup(!orderPopup);
+  }
+
   return (
     <>
     <div>
@@ -13,12 +20,13 @@ const Home = () => {
         </video>
         <Hero/>
       </div>
-      <Places/>
-      <BannerImg/>
-      <Blogs/>
+      <Places handleOrderPopup={handleOrderPopup}/>
+      <BannerImg img ={coverWomen}/>
+      <BlogsComp/>
       <Banner/>
-      <BannerImg/>
+      <BannerImg img ={travelCover}/>
       <Testimonials/>
+      <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup}/>
   
     </div>
     </>

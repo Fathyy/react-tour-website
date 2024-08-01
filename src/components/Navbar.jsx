@@ -40,7 +40,7 @@ const DropdownLinks = [
 ];
 
 
-const Navbar = () => {
+const Navbar = ({ handleOrderPopup }) => {
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -50,13 +50,12 @@ const Navbar = () => {
   
   return (
     <>
-    <div className="fixed top-0 right-0 w-full
-    bg-white text-black shadow-md z-[9999]">
+    <div className="fixed top-0 right-0 w-full z-50 bg-white backdrop-blur-sm text-black shadow-md">
       <div className="bg-gradient-to-r from-primary
       to-secondary text-white">
         <div className="container py-[2px] sm:block hidden">
-          <div className="flex justify-between">
-            <p>20% off on next booking</p>
+          <div className="flex justify-between items-center">
+            <p className="text-sm">20% off on next booking</p>
             <p>Mobile No, 0712345678</p>
           </div>
 
@@ -66,7 +65,7 @@ const Navbar = () => {
       <div className="container py-3 sm:py-0">
         <div className="flex justify-between items-center">
           {/* Logo section */}
-          <div>
+          <div className="flex items-center gap-4  font-bold text-2">
             <Link to="/" onClick={()=> window.scrollTo(0, 0)}>
               <img src={logo} alt="" className="h-16" />
             </Link>
@@ -84,45 +83,45 @@ const Navbar = () => {
 
               <li className="py-4">
                 <NavLink activeClassName = "active" 
-                to="/blogs" onClick={()=> window.scrollTo(0, 0)}>
+                to="/blogs">
                   Blogs
                 </NavLink>
               </li>
 
               <li className="py-4">
                 <NavLink activeClassName = "active"
-                 to="/places" onClick={()=> window.scrollTo(0, 0)}>
+                 to="/places">
                   Best Places
                 </NavLink>
               </li>
 
               <li className="py-4">
                 <NavLink activeClassName = "active"
-                to="/about" onClick={()=> window.scrollTo(0, 0)}>
+                to="/about">
                   About
                 </NavLink>
               </li>
 
               {/* Dropdown section */}
-              <li className="py-4 relative group cursor-pointer">
-                <div className="dropdown group
-                flex items-center">
-                  <span>Quick Links</span>
-                  <span>
-                    <FaCaretDown className="transition-all
-                    duration-200 group-hover:rotate-180"/>
-                  </span>
-                </div>
-
-                <div className="absolute -left-9 z-[999]
+              <li className="relative group cursor-pointer">
+                  <a
+                    href="/#home"
+                    className="flex h-[72px] items-center gap-[2px]">
+                    Quick Links{" "}
+                    <span>
+                      <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
+                    </span>
+                  </a>
+          
+                <div className="absolute -left-9 z-[9999]
                 hidden group-hover:block shadow-md text-black
-                w-[150px] bg-white p-2">
-                  <ul>
+                w-[150px] bg-white p-2 rounded-md">
+                  <ul className="space-y-3">
                     {DropdownLinks.map((data)=> {
                       return (
                         <li key={data.name}>
                         <a href={data.link} className="inline-block
-                        w-full rounded-md p-2 hover:bg-primary/20"></a>
+                        w-full rounded-md p-2 hover:bg-primary/20">{data.name}</a>
                         </li>
                       );
                     })}
@@ -135,10 +134,10 @@ const Navbar = () => {
 
           {/* Book now button */}
           <div className="flex items-center gap-4">
-            <button className="g-gradient-to-r from-primary
-          to-secondary hover:bg-gradient-to-r hover:to-secondary
-          hover:from-primary transition-all duration-600
-          text-white px-3 py-1 rounded-full">Book Now</button>
+            <button onClick={() => handleOrderPopup()}
+            className="bg-gradient-to-r from-primary
+          to-secondary hover:bg-bg-gradient-to-r  hover:from-secondary hover:to-primary
+           transition-all duration-600 text-white px-3 py-1 rounded-full">Book Now</button>
 
        {/* Mobile Hamburger menu */}
        <div className="md:hidden block">

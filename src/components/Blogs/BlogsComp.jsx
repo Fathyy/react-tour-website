@@ -1,4 +1,5 @@
 import { place4, place5, place6 } from "../../assets";
+import BlogCard from "./BlogCard";
 
 
 const BlogsData = [
@@ -12,7 +13,7 @@ const BlogsData = [
       date: "April 22, 2022",
     },
     {
-      id: 1,
+      id: 2,
       image: place5,
       title: "Top places to visit in US",
       description:
@@ -21,7 +22,7 @@ const BlogsData = [
       date: "April 22, 2022",
     },
     {
-      id: 1,
+      id: 3,
       image: place6,
       title: "Top places to visit in Japan",
       description:
@@ -33,15 +34,17 @@ const BlogsData = [
 
 const BlogsComp = () => {
   return (
-    <div className="">
-        <div data-aos= "fade-up" className="container">
+    <div className="dark:bg-gray-900 dark:text-white py-10">
+        <div data-aos="fade-up" className="container">
             <h1 className="my-8 border-l-8 border-primary/50
             py-2 pl-2 text-3xl font-bold">Our latest Blogs</h1>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2
             md:grid-cols-3">
-                {BlogsData.map((item, index) => {
-                    <BlogsDetails key={index} {...item}/>
+                {BlogsData.map((item) => {
+                  return(
+                    <BlogCard key={item.id} {...item }/>
+                  )
                 })}
             </div>
         </div>

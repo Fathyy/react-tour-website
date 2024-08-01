@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Hero = () => {
-    const [priceValue, setPriceValue] = useState(40);
+    const [priceValue, setPriceValue] = useState(30);
   return (
     <div className="bg-black/20 h-full">
         <div className="h-full flex justify-center items-center
@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="container grid grid-cols-1 gap-4">
                 {/* Text content section */}
                 <div className="text-white">
-                    <p data-aos = "fade-up">Our Packages</p>
+                    <p data-aos = "fade-up" className="text-sm">Our Packages</p>
                     <p data-aos = "fade-up"
                     data-aos-delay ="300"
                     className="font-bold text-3xl">
@@ -18,13 +18,13 @@ const Hero = () => {
 
                 {/* form section */}
                 <div data-aos="fade-up" data-aos-delay ="600"
-                className="space-y-4 bg-white rounded-md px-4
+                className="space-y-4 bg-white rounded-md p-4
                 relative">
                     <div className="space-y-4 bg-white rounded-md p-4
                     relative">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4
                         py-3">
-                            <div className="">
+                            <div>
                                 <label htmlFor="destination"
                                 className="opacity-70">
                                     Search your destination
@@ -36,7 +36,7 @@ const Hero = () => {
                                 focus:outline outline-1 rounded-full p-2" />
                             </div>
 
-                            <div className="">
+                            <div>
                                 <label htmlFor="date"
                                 className="opacity-70">
                                     Date
@@ -49,7 +49,7 @@ const Hero = () => {
                             </div>
 
 
-                            <div className="">
+                            <div>
                                 <label htmlFor="date"
                                 className="opacity-70 block">
                                     <div className="w-full flex justify-between

@@ -10,6 +10,9 @@ import tajmahal from './places/tajmahal.jpg';
 import water from './places/water.jpg';
 import footer from './video/footer.mp4';
 import main from './video/main.mp4';
+import profile1 from './profile1.jpg';
+import profile2 from './profile2.jpg';
+import profile3 from './profile3.jpg';
 
 export {
     logo,
@@ -23,5 +26,8 @@ export {
     tajmahal,
     water,
     footer,
-    main
+    main,
+    profile1,
+    profile2,
+    profile3 
 }

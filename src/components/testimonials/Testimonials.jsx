@@ -1,21 +1,24 @@
+import Slider from "react-slick";
+import { profile1, profile2, profile3 } from "../../assets";
+
 const testimonialData = [
     {
       id: 1,
       name: "Samuel",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-      img: "https://picsum.photos/101/101",
+      img: profile1,
     },
     {
-      id: 1,
+      id: 2,
       name: "John Doe",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-      img: "https://picsum.photos/102/102",
+      img: profile2,
     },
     {
-      id: 1,
+      id: 3,
       name: "Smith",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-      img: "https://picsum.photos/103/103",
+      img: profile3,
     },
   ];
 
@@ -61,7 +64,7 @@ const Testimonials = () => {
 
 
   return (
-    <div className="py-10">
+    <div data-aos="fade-up" data-aos-duration="300" className="py-10">
         <div className="container">
             {/* header section */}
             <div className="text-center mb-20 max-w-[400px] mx-auto">
@@ -77,23 +80,24 @@ const Testimonials = () => {
             </div>
 
             {/* Testimonial section */}
-            <Slider {...settings}>
-                {testimonialData.map(( {id, name, text img}) => {
-                    return (
-                        <div className="my-6" key={id}>
-                            <div className="flex flex-col justify-center items-center gap-4 text-center shadow-lg p-4 mx-4 rounded-xl bg-primary relative">
-                                <img src={img} alt="" 
-                                className="rounded-full block mx-auto"/>
-                                <h1 className="text-xl font-bold">{name}</h1>
-                                <p className="text-gray-500 text-sm">{text}</p>
-                                <p className="text-black/20 text-9xl font-serif absolute top-0 right-0">,,</p>
-                            </div>
-                        </div>
-                    );
-
-                })}
-
-            </Slider>
+            <div data-aos="zoom-in" data-aos-duration="300" 
+              className="grid grid-cols-1 max-w-[800px] mx-auto gap-6">
+              <Slider {...settings}>
+                  {testimonialData.map(({ id, name, text, img }) => {
+                      return (
+                          <div className="my-6" key={id}>
+                              <div className="flex flex-col justify-center items-center gap-4 text-center shadow-lg p-4 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative">
+                                  <img src={img} alt="" 
+                                  className="rounded-full block mx-auto"/>
+                                  <h1 className="text-xl font-bold">{name}</h1>
+                                  <p className="text-gray-500 text-sm">{text}</p>
+                                  <p className="text-black/20 text-9xl font-serif absolute top-0 right-0">,,</p>
+                              </div>
+                          </div>
+                      );
+                  })}
+              </Slider>
+            </div>
         </div>
     </div>
   )
